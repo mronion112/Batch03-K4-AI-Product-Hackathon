@@ -6,7 +6,7 @@ Fallback: DuckDuckGo nếu không có key.
 import os
 from dotenv import load_dotenv
 
-load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".env"))
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "..", ".env"))
 
 
 def search_web(query: str, max_results: int = 5) -> list[dict]:

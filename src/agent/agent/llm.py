@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import os
 
-load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".env"))
 
 llm = ChatOpenAI(
     model="gpt-4o-mini",

@@ -10,7 +10,7 @@ from pypdf import PdfReader
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 
-load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".env"))
 
 PDF_DIR = Path(__file__).parent.parent.parent / "frontend" / "public"
 PDF_FILES = {
