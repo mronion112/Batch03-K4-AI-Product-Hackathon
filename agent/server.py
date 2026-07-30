@@ -167,6 +167,8 @@ async def chat_stream(req: ChatRequest):
             context = slide_result
             if web_result and needs_web:
                 context = f"{slide_result}\n\nKết quả research thêm từ web:\n{web_result}"
+                if paper_result:
+                    context = f"{context}\n\n📚 Paper học thuật:\n{paper_result}"
                 result_citations = result_citations + ["Web search"]
 
         history_text = ""

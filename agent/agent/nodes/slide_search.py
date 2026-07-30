@@ -80,26 +80,17 @@ def search_slide(state: AgentState) -> AgentState:
 
 def decide_search(state: AgentState) -> AgentState:
     mode = state.get("mode", "normal")
+    question = state.get("user_question", "")
+
     if mode != "research":
         return {**state, "needs_web_search": False, "needs_paper_search": False}
 
-    slide_result = state.get("slide_search_result", "")
-    question = state.get("user_question", "")
-
-    if "SLIDE_NOT_ENOUGH_INFO" in slide_result or not slide_result.strip():
-        relevant = _is_relevant_to_course(question)
-        needs_paper = _is_academic(question) if relevant else False
-        return {**state, "needs_web_search": relevant, "needs_paper_search": needs_paper}
-
-    prompt = f"""Câu hỏi: {question}
-Câu trả lời từ slide: {slide_result[:500]}
-Có ít nhất 1 ý đúng câu hỏi? YES/NO:"""
-    response = llm.invoke(prompt)
-    needs_web = "NO" in response.content.upper().split("\n")[0]
-    needs_paper = _is_academic(question) if needs_web else False
-    return {**state, "needs_web_search": needs_web, "needs_paper_search": needs_paper}
-
-
+    # Research mode: always web search, paper if academic
+    # But still filter: only if relevant to course
+    if not _is_relevant_to_course(question):
+        return {**state, "needs_web_search": False, "needs_paper_search": False}
+    needs_paper = _is_academic(question)
+    return {**state, "needs_web_search": True, "needs_paper_search": needs_paper}
 def _is_academic(question: str) -> bool:
     prompt = f"""Câu hỏi: "{question}"
 Đây có phải câu hỏi cần tìm paper học thuật không? (khái niệm chuyên sâu, so sánh phương pháp, state-of-the-art)

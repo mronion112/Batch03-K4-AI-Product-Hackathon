@@ -15,7 +15,7 @@ Chỉ trả về từ khóa cách nhau bằng khoảng trắng, không dấu ph�
 Câu hỏi: {question}
 Từ khóa:"""
     
-    keywords = llm.invoke(prompt).content.strip()
+    keywords = llm.invoke(prompt).content.strip().replace(",", "").replace('"', "")
     papers = arxiv_search(keywords, max_results=3)
     
     if not papers:

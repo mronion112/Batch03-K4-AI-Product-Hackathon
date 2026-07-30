@@ -64,12 +64,7 @@ def _request(url: str, params=None):
 
 def _normalize_query(query: str):
 
-    query = " ".join(query.split())
-
-    if ":" in query:
-        return query
-
-    return f'all:"{query}"'
+    return " ".join(query.split())
 
 
 
