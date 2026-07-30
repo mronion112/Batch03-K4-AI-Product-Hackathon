@@ -88,9 +88,14 @@ def search_slide(state: AgentState) -> AgentState:
 def decide_search(state: AgentState) -> AgentState:
     """
     Chỉ search web khi:
-    1. Slide THỰC SỰ không có thông tin
-    2. Câu hỏi LIÊN QUAN đến chủ đề khóa học (AI, LLM, ML, công nghệ)
+    1. Mode = "research"
+    2. Slide THỰC SỰ không có thông tin
+    3. Câu hỏi LIÊN QUAN đến chủ đề khóa học
     """
+    mode = state.get("mode", "normal")
+    if mode != "research":
+        return {**state, "needs_web_search": False}
+
     slide_result = state.get("slide_search_result", "")
     question = state.get("user_question", "")
 

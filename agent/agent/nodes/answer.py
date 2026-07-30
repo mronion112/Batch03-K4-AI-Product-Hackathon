@@ -72,7 +72,7 @@ def generate_answer(state: AgentState) -> AgentState:
             return {
                 **state,
                 "final_answer": f"Rất tiếc, nội dung slide hiện tại không có đủ thông tin để trả lời câu hỏi này. Bạn có thể thử:\n- Chuyển sang trang khác có nội dung liên quan\n- Đặt câu hỏi khác về chủ đề trong slide\n- Bôi đen đoạn văn bản cụ thể trên slide để mình giải thích",
-                "citations": citations,
+                "citations": [],
             }
     else:
         prompt = SYSTEM_PROMPT

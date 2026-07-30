@@ -5,3 +5,6 @@ fastapi>=0.100
 uvicorn>=0.30
 pypdf>=5.0
 python-dotenv>=1.0
+numpy>=1.0
+duckduckgo_search>=7.0
+PyMuPDF>=1.0
