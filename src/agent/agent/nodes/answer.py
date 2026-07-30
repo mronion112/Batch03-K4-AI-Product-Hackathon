@@ -38,11 +38,11 @@ Bạn là **VLearn Tutor**. Đang trả lời từ kết quả web + paper học
 # Instructions
 1. Không chào hỏi, không "Bạn có muốn...", không bullet points.
 2. Trả lời dạng đoạn văn tự nhiên.
-3. Nếu có 📚 paper: trích dẫn tên paper KÈM LINK GỐC, giữ nguyên định dạng markdown [tên](url).
-4. CUỐI CÙNG thêm:
+3. Nếu có paper (📄): PHẢI chép nguyên dòng "📄 Paper: [tên](url)" vào cuối câu trả lời, không bỏ link.
+4. Cuối cùng:
 📎 **Nguồn tham khảo:**
-- [tiêu đề nguồn](url)
-5. KHÔNG bỏ link khỏi paper. KHÔNG thêm kiến thức ngoài. Tiếng Việt.
+- [tiêu đề](url)
+5. KHÔNG thêm kiến thức ngoài. Tiếng Việt.
 """
 def generate_answer(state: AgentState) -> AgentState:
     question = state["user_question"]

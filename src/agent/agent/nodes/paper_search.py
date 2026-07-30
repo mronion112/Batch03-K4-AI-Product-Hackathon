@@ -23,12 +23,14 @@ Từ khóa:"""
 
     lines = []
     for i, p in enumerate(papers, 1):
-        authors = ", ".join(p.get("authors", [])[:3])
+        authors = ", ".join(p.get("authors", [])[:2])
+        title = p['title']
+        url = p.get('pdf_url', p.get('abstract_url', ''))
         lines.append(
-            f"{i}. **{p['title']}**\n"
+            f"{i}. **{title}**\n"
             f"   {authors}\n"
-            f"   {p['summary'][:300]}...\n"
-            f"   📎 [{p.get('pdf_url', '')}]({p.get('pdf_url', '')})"
+            f"   {p['summary'][:250]}...\n"
+            f"   📄 Paper: [{title}]({url})"
         )
     
     return {**state, "paper_search_result": "\n\n".join(lines)}
