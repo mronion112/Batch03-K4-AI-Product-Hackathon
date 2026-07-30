@@ -7,3 +7,6 @@ agent/venv/
 agent/__pycache__/
 agent/**/__pycache__/
 *.pyc
+src/agent/venv/
+src/agent/__pycache__/
+src/**/__pycache__/
