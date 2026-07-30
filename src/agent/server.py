@@ -157,6 +157,7 @@ async def chat_stream(req: ChatRequest):
                 context = web_result
                 if paper_result:
                     context = f"{context}\n\n📚 Paper học thuật:\n{paper_result}"
+                    context += "\n\n<SOURCES>\nPHẢI chép nguyên các dòng paper kèm link vào cuối câu trả lời:\n" + paper_result + "\n</SOURCES>"
                 result_citations = result_citations + ["Web search"]
             else:
                 yield f"data: {json.dumps({'token': 'Rất tiếc, nội dung slide hiện tại không có đủ thông tin để trả lời câu hỏi này.'})}\n\n"
@@ -169,6 +170,7 @@ async def chat_stream(req: ChatRequest):
                 context = f"{slide_result}\n\nKết quả research thêm từ web:\n{web_result}"
                 if paper_result:
                     context = f"{context}\n\n📚 Paper học thuật:\n{paper_result}"
+                    context += "\n\n<SOURCES>\nPHẢI chép nguyên các dòng paper kèm link:\n" + paper_result + "\n</SOURCES>"
                 result_citations = result_citations + ["Web search"]
 
         history_text = ""

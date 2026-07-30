@@ -61,6 +61,7 @@ def generate_answer(state: AgentState) -> AgentState:
             context = web_result
             if paper_result:
                 context = f"{context}\n\n📚 Paper học thuật:\n{paper_result}"
+                context += "\n\n<SOURCES>\nPHẢI chép nguyên các dòng paper kèm link vào cuối câu trả lời:\n" + paper_result + "\n</SOURCES>"
             citations = citations + ["Web search"]
         else:
             return {
@@ -75,6 +76,7 @@ def generate_answer(state: AgentState) -> AgentState:
             context = f"{slide_result}\n\nKết quả research thêm từ web:\n{web_result}"
             if paper_result:
                 context = f"{context}\n\n📚 Paper học thuật:\n{paper_result}"
+                context += "\n\n<SOURCES>\nKhi trả lời, PHẢI chép nguyên các dòng paper bên dưới kèm link vào cuối câu trả lời, không được bỏ link:\n" + paper_result + "\n</SOURCES>"
             citations = citations + ["Web search"]
 
     history_text = ""
