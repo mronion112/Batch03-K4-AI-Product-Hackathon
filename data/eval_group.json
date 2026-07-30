@@ -1,0 +1,240 @@
+[
+  {
+    "id": "group_case_01",
+    "phase": "B",
+    "failure_type": "wrong_tool",
+    "query": "Theo Paper 1 về Prompt Injection, phương pháp phòng thủ nào là duy nhất đạt tỷ lệ rò rỉ 0% qua 15.000 cuộc tấn công?",
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper1_prompt_injection"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Kiểm tra khả năng tra cứu thông số chính xác từ Paper 1 (Output Filtering - t5/t7)."
+    }
+  },
+  {
+    "id": "group_case_02",
+    "phase": "B",
+    "failure_type": "wrong_tool",
+    "query": "Phương pháp MBECAS-SR trong Paper 2 về Quantum Computing có vai trò gì trong khung QC-DFET?",
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper2_quantum_computing"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Kiểm tra khả năng trích xuất khái niệm thuật toán MBECAS-SR từ Paper 2."
+    }
+  },
+  {
+    "id": "group_case_03",
+    "phase": "B",
+    "failure_type": "missing_info",
+    "query": "So sánh phương pháp luận nghiên cứu giữa Paper 1 (Prompt Injection) và Paper 2 (Quantum Chemistry)?",
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper1_prompt_injection"
+          }
+        },
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper2_quantum_computing"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Kiểm tra khả năng gọi CẢ 2 PAPER để tổng hợp và so sánh phương pháp luận."
+    }
+  },
+  {
+    "id": "group_case_04",
+    "phase": "B",
+    "failure_type": "out_of_scope",
+    "query": "Thủ đô của nước Pháp là gì và thời tiết Paris hôm nay thế nào?",
+    "expect": "no_tool",
+    "metadata": {
+      "what_it_tests": "Kiểm tra bẫy Out-of-Scope: AI phải từ chối trả lời vì không nằm trong 2 bài báo."
+    }
+  },
+  {
+    "id": "group_case_05",
+    "phase": "B",
+    "failure_type": "wrong_arg_value",
+    "query": "Trong Paper 1, model Claude Sonnet 4.6 có bị lộ bí mật không và khác gì so với Gemini 2.5 Pro?",
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper1_prompt_injection"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Kiểm tra khả năng tìm chi tiết so sánh các model LLM trong Paper 1 (Claude kháng cự tốt hơn, đạt 0.90 sau 300 rounds)."
+    }
+  },
+  {
+    "id": "group_case_06",
+    "phase": "B",
+    "failure_type": "missing_info",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Tôi muốn biết về bài toán hấp phụ CO trên bề mặt Cu(111)."
+      },
+      {
+        "role": "user",
+        "content": "QC-DFET giải quyết lỗi dự đoán vị trí hấp phụ (site preference) của phương pháp DFT thường như thế nào?"
+      }
+    ],
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper2_quantum_computing"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Multi-turn case: Tra cứu cơ chế sửa lỗi ưu tiên vị trí top-site thay vì hollow-site của QC-DFET."
+    }
+  },
+  {
+    "id": "group_case_07",
+    "phase": "B",
+    "failure_type": "wrong_boundary",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Phương pháp phòng thủ t7 trong Paper 1 gồm những gì?"
+      },
+      {
+        "role": "user",
+        "content": "Nếu bỏ đi lớp Output Filtering (Ablation t8) thì điều gì xảy ra với tỷ lệ rò rỉ?"
+      }
+    ],
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper1_prompt_injection"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Multi-turn case: Kiểm tra chỉ số kiểm thử Ablation (t8 bị rò rỉ 0.5% tương đương 23/5000 cuộc tấn công)."
+    }
+  },
+  {
+    "id": "group_case_08",
+    "phase": "B",
+    "failure_type": "wrong_arg_value",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Phần cứng máy tính lượng tử được dùng trong Paper 2 là gì?"
+      },
+      {
+        "role": "user",
+        "content": "Hãy cho biết số lượng Qubit, số Coupler và thời gian Coherence T1, T2 của thiết bị này?"
+      }
+    ],
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper2_quantum_computing"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Multi-turn case: Trích xuất thông số kỹ thuật phần cứng (Tianyan-176-II, 66 qubits, 110 couplers, T1=23.55us, T2=9.05us)."
+    }
+  },
+  {
+    "id": "group_case_09",
+    "phase": "B",
+    "failure_type": "unnecessary_tool",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Tôi muốn nghiên cứu về bảo mật và lượng tử."
+      },
+      {
+        "role": "user",
+        "content": "Hãy giúp tôi làm rõ câu hỏi để tra cứu trong tài liệu."
+      }
+    ],
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "clarify",
+          "arguments": {
+            "response_type": "open_question"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Multi-turn case: Kiểm tra tính năng Query Enhancement/Clarify khi câu hỏi của user quá mơ hồ."
+    }
+  },
+  {
+    "id": "group_case_10",
+    "phase": "B",
+    "failure_type": "missing_info",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Kết luận chính của cả 2 bài báo là gì?"
+      },
+      {
+        "role": "user",
+        "content": "Tóm tắt ngắn gọn 2 khuyến nghị thực tiễn nhất từ mỗi bài báo."
+      }
+    ],
+    "expect": {
+      "tool_calls": [
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper1_prompt_injection"
+          }
+        },
+        {
+          "name": "paper_text",
+          "arguments": {
+            "paper_id": "paper2_quantum_computing"
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "what_it_tests": "Multi-turn case: Đánh giá khả năng tổng hợp khuyến nghị kết luận từ CẢ 2 PAPER."
+    }
+  }
+]
