@@ -42,7 +42,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-100: #fef3c6;
-    --color-amber-200: #fee685;
     --color-amber-700: #b75000;
     --color-slate-50: #f8fafc;
     --color-slate-100: #f1f5f9;
@@ -81,7 +80,6 @@
   @supports (color: lab(0% 0 0)) {
     :root, :host {
       --color-amber-100: lab(95.916% -1.21653 23.111);
-      --color-amber-200: lab(91.7203% -.505269 49.9084);
       --color-amber-700: lab(47.2709% 42.9082 69.2966);
       --color-slate-50: lab(98.1434% -.369519 -1.05966);
       --color-slate-100: lab(96.286% -.852436 -2.46847);
@@ -1837,10 +1835,6 @@
 
     .hover\:bg-\[\#134D8B\]:hover {
       background-color: #134d8b;
-    }
-
-    .hover\:bg-amber-200:hover {
-      background-color: var(--color-amber-200);
     }
 
     .hover\:bg-slate-50:hover {

@@ -1118,8 +1118,8 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: ()=>setResearchMode(!researchMode),
-                                        className: `p-1.5 rounded-lg text-xs font-medium transition-colors ${researchMode ? "bg-amber-100 text-amber-700 hover:bg-amber-200" : "text-slate-400 hover:text-slate-600 hover:bg-slate-100"}`,
-                                        title: researchMode ? "Research mode: tìm kiếm web + paper" : "Normal mode: chỉ tìm trong slide",
+                                        className: `p-1.5 rounded-lg text-xs font-medium transition-colors ${researchMode ? "bg-amber-100 text-amber-700" : "text-slate-400 hover:text-slate-600 hover:bg-slate-100"}`,
+                                        title: researchMode ? "Research mode: tìm kiếm web" : "Normal: chỉ trong slide",
                                         children: researchMode ? "🔬 Research" : "📖 Normal"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ChatPanel.tsx",
@@ -1143,17 +1143,17 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                 d: "M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 235,
+                                                lineNumber: 233,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ChatPanel.tsx",
-                                            lineNumber: 234,
+                                            lineNumber: 232,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                        lineNumber: 229,
+                                        lineNumber: 227,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1173,17 +1173,17 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                 d: "M18 6 6 18M6 6l12 12"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 244,
+                                                lineNumber: 242,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ChatPanel.tsx",
-                                            lineNumber: 243,
+                                            lineNumber: 241,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                        lineNumber: 238,
+                                        lineNumber: 236,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -1215,7 +1215,7 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 265,
+                                                lineNumber: 263,
                                                 columnNumber: 19
                                             }, this),
                                             msg.role === "tutor" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1231,19 +1231,19 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                                         children: children
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                                                        lineNumber: 273,
+                                                                        lineNumber: 271,
                                                                         columnNumber: 29
                                                                     }, this)
                                                             },
                                                             children: msg.content
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ChatPanel.tsx",
-                                                            lineNumber: 270,
+                                                            lineNumber: 268,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                                        lineNumber: 269,
+                                                        lineNumber: 267,
                                                         columnNumber: 21
                                                     }, this),
                                                     msg.citations && msg.citations.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1265,20 +1265,20 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                                             d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ChatPanel.tsx",
-                                                                            lineNumber: 286,
+                                                                            lineNumber: 284,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                                             d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ChatPanel.tsx",
-                                                                            lineNumber: 287,
+                                                                            lineNumber: 285,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ChatPanel.tsx",
-                                                                    lineNumber: 285,
+                                                                    lineNumber: 283,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 msg.citations.filter((c)=>c !== "Web search" && !c.startsWith("http")).map((c, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1291,41 +1291,41 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                                         ]
                                                                     }, i, true, {
                                                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                                                        lineNumber: 292,
+                                                                        lineNumber: 290,
                                                                         columnNumber: 31
                                                                     }, this))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ChatPanel.tsx",
-                                                            lineNumber: 284,
+                                                            lineNumber: 282,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 281,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 268,
+                                                lineNumber: 266,
                                                 columnNumber: 19
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: msg.content
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 306,
+                                                lineNumber: 304,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                        lineNumber: 257,
+                                        lineNumber: 255,
                                         columnNumber: 15
                                     }, this)
                                 }, msg.id, false, {
                                     fileName: "[project]/src/components/ChatPanel.tsx",
-                                    lineNumber: 253,
+                                    lineNumber: 251,
                                     columnNumber: 13
                                 }, this)),
                             isTyping && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1342,7 +1342,7 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 316,
+                                                lineNumber: 314,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1352,7 +1352,7 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 317,
+                                                lineNumber: 315,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1362,36 +1362,36 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 318,
+                                                lineNumber: 316,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                        lineNumber: 315,
+                                        lineNumber: 313,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ChatPanel.tsx",
-                                    lineNumber: 314,
+                                    lineNumber: 312,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                lineNumber: 313,
+                                lineNumber: 311,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 ref: chatEndRef
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                lineNumber: 324,
+                                lineNumber: 322,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ChatPanel.tsx",
-                        lineNumber: 251,
+                        lineNumber: 249,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1411,7 +1411,7 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ChatPanel.tsx",
-                                    lineNumber: 330,
+                                    lineNumber: 328,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1436,36 +1436,36 @@ function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, onJumpToDocPage
                                                 y2: "13"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 346,
+                                                lineNumber: 344,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
                                                 points: "22 2 15 22 11 13 2 9 22 2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ChatPanel.tsx",
-                                                lineNumber: 347,
+                                                lineNumber: 345,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ChatPanel.tsx",
-                                        lineNumber: 345,
+                                        lineNumber: 343,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ChatPanel.tsx",
-                                    lineNumber: 339,
+                                    lineNumber: 337,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ChatPanel.tsx",
-                            lineNumber: 329,
+                            lineNumber: 327,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/ChatPanel.tsx",
-                        lineNumber: 328,
+                        lineNumber: 326,
                         columnNumber: 9
                     }, this)
                 ]

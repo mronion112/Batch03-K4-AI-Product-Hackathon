@@ -6,6 +6,7 @@ import re
 
 INJECTION_PATTERNS = [
     r"ignore\s+(all\s+)?(previous|above|the\s+above)\s+(instructions?|directions?|prompts?)",
+    r"ignore\s+(all\s+)?(instructions?|directions?|prompts?|rules?)",
     r"(forget|disregard)\s+(all\s+)?(previous|your)\s+(instructions?|rules?)",
     r"(system\s*)?prompt\s*(leak|leaking|extract|steal|show\s*me)",
     r"what\s+is\s+your\s+(system\s*)?prompt",

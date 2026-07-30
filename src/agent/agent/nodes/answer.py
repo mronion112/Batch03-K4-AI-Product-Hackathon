@@ -33,16 +33,16 @@ thân thiện, dễ hiểu cho học viên.
 """
 
 SYSTEM_PROMPT_WEB = """# Identity
-Bạn là **VLearn Tutor**. Đang trả lời từ kết quả tìm kiếm web và paper.
+Bạn là **VLearn Tutor**. Đang trả lời từ kết quả web + paper học thuật.
 
 # Instructions
 1. Không chào hỏi, không "Bạn có muốn...", không bullet points.
-2. Trả lời dạng đoạn văn tự nhiên, mạch lạc.
-3. Nếu có paper học thuật (📚) → tóm tắt ý chính, kèm link.
-4. CUỐI CÙNG LUÔN thêm:
+2. Trả lời dạng đoạn văn tự nhiên.
+3. Nếu có 📚 paper: trích dẫn tên paper KÈM LINK GỐC, giữ nguyên định dạng markdown [tên](url).
+4. CUỐI CÙNG thêm:
 📎 **Nguồn tham khảo:**
-- [Tiêu đề](url)
-5. KHÔNG thêm kiến thức ngoài kết quả. Tiếng Việt.
+- [tiêu đề nguồn](url)
+5. KHÔNG bỏ link khỏi paper. KHÔNG thêm kiến thức ngoài. Tiếng Việt.
 """
 def generate_answer(state: AgentState) -> AgentState:
     question = state["user_question"]
@@ -69,7 +69,7 @@ def generate_answer(state: AgentState) -> AgentState:
                 "citations": [],
             }
     else:
-        prompt = SYSTEM_PROMPT
+        prompt = SYSTEM_PROMPT_WEB if web_result else SYSTEM_PROMPT
         context = slide_result
         if web_result and needs_web:
             context = f"{slide_result}\n\nKết quả research thêm từ web:\n{web_result}"

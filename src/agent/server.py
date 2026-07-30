@@ -163,7 +163,7 @@ async def chat_stream(req: ChatRequest):
                 yield f"data: {json.dumps({'done': True, 'citations': result_citations})}\n\n"
                 return
         else:
-            prompt = SLIDE_PROMPT
+            prompt = WEB_PROMPT if web_result else SLIDE_PROMPT
             context = slide_result
             if web_result and needs_web:
                 context = f"{slide_result}\n\nKết quả research thêm từ web:\n{web_result}"
