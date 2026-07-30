@@ -69,9 +69,11 @@ async def chat(req: ChatRequest):
         "messages": req.history,
         "slide_search_result": None,
         "web_search_result": None,
+        "paper_search_result": None,
         "final_answer": None,
         "citations": citations,
         "needs_web_search": False,
+        "needs_paper_search": False,
         "error": None,
         "mode": req.mode,
     }
@@ -113,9 +115,11 @@ async def chat_stream(req: ChatRequest):
         "messages": req.history,
         "slide_search_result": None,
         "web_search_result": None,
+        "paper_search_result": None,
         "final_answer": None,
         "citations": citations,
         "needs_web_search": False,
+        "needs_paper_search": False,
         "error": None,
         "mode": req.mode,
     }
@@ -123,6 +127,7 @@ async def chat_stream(req: ChatRequest):
     async def event_stream():
         from agent.nodes.slide_search import search_slide, decide_search
         from agent.nodes.web_search import search_online
+        from agent.nodes.paper_search import search_papers
         from agent.nodes.answer import SYSTEM_PROMPT as SLIDE_PROMPT, SYSTEM_PROMPT_WEB as WEB_PROMPT
 
         # Run non-streaming nodes
@@ -131,11 +136,14 @@ async def chat_stream(req: ChatRequest):
 
         if result.get("needs_web_search"):
             result = search_online(result)
+            if result.get("needs_paper_search"):
+                result = search_papers(result)
 
         # Stream final answer
         question = result["user_question"]
         slide_result = result.get("slide_search_result", "")
         web_result = result.get("web_search_result", "")
+        paper_result = result.get("paper_search_result", "")
         current_page = result.get("current_page", 1)
         slide_title = result.get("slide_title", "")
         result_citations = result.get("citations", [])
@@ -147,6 +155,8 @@ async def chat_stream(req: ChatRequest):
             if web_result:
                 prompt = WEB_PROMPT
                 context = web_result
+                if paper_result:
+                    context = f"{context}\n\n📚 Paper học thuật:\n{paper_result}"
                 result_citations = result_citations + ["Web search"]
             else:
                 yield f"data: {json.dumps({'token': 'Rất tiếc, nội dung slide hiện tại không có đủ thông tin để trả lời câu hỏi này.'})}\n\n"

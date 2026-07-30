@@ -69,7 +69,7 @@ class SlideIndex:
 
         results = []
         for idx in top_k:
-            if similarities[idx] > 0.5:
+            if similarities[idx] > 0.4:
                 results.append(self.page_texts[idx])
 
         return results

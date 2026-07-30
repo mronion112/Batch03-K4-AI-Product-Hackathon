@@ -57,6 +57,7 @@ def generate_answer(state: AgentState) -> AgentState:
     question = state["user_question"]
     slide_result = state.get("slide_search_result", "")
     web_result = state.get("web_search_result", "")
+    paper_result = state.get("paper_search_result", "")
     current_page = state.get("current_page", 1)
     slide_title = state.get("slide_title", "")
     citations = state.get("citations", [])
@@ -67,6 +68,8 @@ def generate_answer(state: AgentState) -> AgentState:
         if web_result:
             prompt = SYSTEM_PROMPT_WEB
             context = web_result
+            if paper_result:
+                context = f"{context}\n\n📚 Paper học thuật:\n{paper_result}"
             citations = citations + ["Web search"]
         else:
             return {

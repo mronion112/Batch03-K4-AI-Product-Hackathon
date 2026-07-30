@@ -222,7 +222,7 @@ export default function ChatPanel({ activeDocId, currentPage, isOpen, onToggle, 
               }`}
               title={researchMode ? "Research mode: tìm kiếm web" : "Normal: chỉ trong slide"}
             >
-              {researchMode ? "🔬" : "📖"}
+              {researchMode ? "🔬 Research" : "📖 Normal"}
             </button>
             <button
               onClick={handleClearChat}

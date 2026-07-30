@@ -10,7 +10,7 @@ Luồng xử lý:
 
 from langgraph.graph import StateGraph, END
 from agent.state import AgentState
-from agent.nodes import slide_search, web_search, answer
+from agent.nodes import slide_search, web_search, paper_search, answer
 
 
 def build_graph() -> StateGraph:
@@ -20,6 +20,7 @@ def build_graph() -> StateGraph:
     graph.add_node("search_slide", slide_search.search_slide)
     graph.add_node("decide_search", slide_search.decide_search)
     graph.add_node("web_search", web_search.search_online)
+    graph.add_node("paper_search", paper_search.search_papers)
     graph.add_node("generate_answer", answer.generate_answer)
 
     # ── Edges ──
@@ -35,7 +36,15 @@ def build_graph() -> StateGraph:
             "generate_answer": "generate_answer",
         },
     )
-    graph.add_edge("web_search", "generate_answer")
+    graph.add_conditional_edges(
+        "web_search",
+        lambda state: "paper_search" if state.get("needs_paper_search") else "generate_answer",
+        {
+            "paper_search": "paper_search",
+            "generate_answer": "generate_answer",
+        },
+    )
+    graph.add_edge("paper_search", "generate_answer")
     graph.add_edge("generate_answer", END)
 
     return graph.compile()
